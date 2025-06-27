@@ -1,0 +1,40 @@
+{
+    "application": {
+        "name": "2dir-insight",
+        "version": "0.1.0",
+        "window_size": [
+            1200,
+            800
+        ],
+        "default_theme": "light"
+    },
+    "visualization": {
+        "default_colormap": "viridis",
+        "contour_levels": 20,
+        "figure_dpi": 100,
+        "line_width": 1.0,
+        "font_size": 12
+    },
+    "processing": {
+        "fft_zero_filling": 2,
+        "apodization": "exponential",
+        "phase_correction": true,
+        "baseline_correction": true
+    },
+    "file_formats": {
+        "supported_input": [
+            ".nmr",
+            ".fid",
+            ".dat",
+            ".txt",
+            ".csv"
+        ],
+        "default_output": ".h5",
+        "auto_backup": true
+    },
+    "performance": {
+        "max_data_points": 1000000,
+        "parallel_processing": true,
+        "memory_limit_mb": 2048
+    }
+}

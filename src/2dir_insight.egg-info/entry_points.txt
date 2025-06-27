@@ -1,0 +1,2 @@
+[console_scripts]
+2dir-gui = scripts.run_gui:main

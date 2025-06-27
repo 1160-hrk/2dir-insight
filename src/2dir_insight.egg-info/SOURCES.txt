@@ -1,0 +1,14 @@
+README.md
+setup.py
+src/2dir_insight.egg-info/PKG-INFO
+src/2dir_insight.egg-info/SOURCES.txt
+src/2dir_insight.egg-info/dependency_links.txt
+src/2dir_insight.egg-info/entry_points.txt
+src/2dir_insight.egg-info/requires.txt
+src/2dir_insight.egg-info/top_level.txt
+src/core/__init__.py
+src/core/data_loader.py
+src/gui/__init__.py
+src/gui/main_window.py
+src/utils/__init__.py
+src/visualization/__init__.py

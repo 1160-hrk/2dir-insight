@@ -1,0 +1,59 @@
+{
+	"name": "2dir-insight Dev Environment",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.12"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter-renderers",
+				"njpwerner.autodocstring",
+				"ms-python.docstring-generator",
+				"ms-python.black-formatter",
+				"charliermarsh.ruff"
+			],
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				"python.formatting.provider": "black",
+				"python.linting.enabled": true,
+				"python.linting.ruffEnabled": true,
+				"jupyter.askForKernelRestart": false,
+				"jupyter.alwaysTrustNotebooks": true
+			}
+		}
+	},
+	"forwardPorts": [
+		8888,
+		8080
+	],
+	"postCreateCommand": "git --version && pip install -e . && python scripts/setup_environment.py && echo '✅ 環境セットアップ完了' && (python /usr/local/bin/test-gui.py || echo '⚠️  GUI環境の確認: python /usr/local/bin/test-gui.py')",
+	"remoteUser": "vscode",
+	"mounts": [
+		"source=${localWorkspaceFolder}/data,target=/workspace/data,type=bind"
+	],
+	"initializeCommand": "echo 'Dev Container環境を初期化中...'",
+	"hostRequirements": {
+		"memory": "4gb"
+	},
+	"containerEnv": {
+		"PYTHONPATH": "/workspace/src",
+		"QT_X11_NO_MITSHM": "1",
+		"QT_GRAPHICSSYSTEM": "native",
+		"QT_QPA_PLATFORM": "offscreen",
+		"QT_SELECT": "6",
+		"DISPLAY": ":99"
+	},
+	"shutdownAction": "stopContainer"
+}

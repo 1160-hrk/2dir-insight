@@ -1,0 +1,38 @@
+{
+    "nmr_parameters": {
+        "magnetic_field": 600.0,
+        "temperature": 298.15,
+        "solvent": "CDCl3",
+        "pulse_sequence": "cosy"
+    },
+    "processing_parameters": {
+        "spectral_width_f1": 12.0,
+        "spectral_width_f2": 12.0,
+        "carrier_frequency_f1": 600.0,
+        "carrier_frequency_f2": 600.0,
+        "data_points_f1": 512,
+        "data_points_f2": 1024,
+        "zero_filling_f1": 1024,
+        "zero_filling_f2": 2048
+    },
+    "apodization": {
+        "function": "exponential",
+        "line_broadening_f1": 3.0,
+        "line_broadening_f2": 1.0,
+        "gaussian_broadening": 0.1
+    },
+    "phase_correction": {
+        "auto_phase": true,
+        "zero_order_f1": 0.0,
+        "first_order_f1": 0.0,
+        "zero_order_f2": 0.0,
+        "first_order_f2": 0.0
+    },
+    "display": {
+        "contour_levels": 20,
+        "positive_levels": 15,
+        "negative_levels": 5,
+        "level_multiplier": 1.2,
+        "minimum_level": 0.05
+    }
+}
